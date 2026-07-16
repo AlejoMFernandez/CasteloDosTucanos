@@ -1,0 +1,123 @@
+:root{
+  --ink:#15090C; --paper:#F5EEE1; --gold:#D9AE5F; --terra:#C4633B; --vinho:#6E1B2E;
+  --serif:"Playfair Display",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body.imm{font-family:var(--sans);background:var(--ink);color:var(--paper);overflow-x:hidden;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.imm-kicker{display:inline-block;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+
+/* NAV */
+.imm-nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  padding:14px 34px;transition:background .4s var(--ease-out)}
+.imm-nav.solid{background:rgba(21,9,12,.82);backdrop-filter:blur(14px)}
+.imm-back{font-size:12px;letter-spacing:1px;color:rgba(245,238,225,.65);transition:color .25s}
+.imm-back:hover{color:var(--gold)}
+.imm-logo{height:60px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));transition:transform .4s var(--ease-out);transform-origin:center}
+.imm-nav.solid .imm-logo{transform:scale(.8)}
+.imm-cta{border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.5px;
+  padding:10px 22px;border-radius:2px;transition:background .3s var(--ease-out),color .3s var(--ease-out),transform .2s var(--ease-out)}
+.imm-cta:hover{background:var(--gold);color:var(--ink)}
+.imm-cta:active{transform:scale(.97)}
+
+/* HERO */
+.imm-hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:flex-end;overflow:hidden}
+.imm-hero-bg{position:absolute;inset:-8% 0;background-size:cover;background-position:center;z-index:0;will-change:transform}
+.imm-hero-veil{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(21,9,12,.4) 0%,rgba(21,9,12,.15) 40%,rgba(21,9,12,.92) 100%)}
+.imm-hero-content{position:relative;z-index:2;padding:0 clamp(24px,6vw,90px) clamp(60px,10vh,120px);max-width:1000px}
+.imm-title{font-family:var(--serif);font-weight:700;font-size:clamp(56px,11vw,150px);line-height:.92;letter-spacing:-.01em}
+.imm-title em{font-style:italic;font-weight:500;color:var(--gold)}
+.imm-lead{max-width:520px;margin-top:26px;font-size:clamp(16px,1.6vw,20px);color:rgba(245,238,225,.9)}
+.imm-rating{margin-top:22px;font-size:14px;letter-spacing:.5px;color:rgba(245,238,225,.75)}
+.imm-rating span{color:var(--gold);font-weight:700}
+.imm-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;
+  letter-spacing:3px;text-transform:uppercase;color:rgba(245,238,225,.6);display:flex;flex-direction:column;align-items:center;gap:10px}
+.imm-scroll span{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:immline 2s ease-in-out infinite}
+@keyframes immline{0%,100%{transform:scaleY(.4);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
+
+/* MANIFIESTO */
+.imm-manifesto{padding:clamp(90px,16vh,180px) clamp(24px,8vw,140px);max-width:1100px;margin:0 auto}
+.imm-manifesto p{font-family:var(--serif);font-size:clamp(24px,3.4vw,44px);line-height:1.35;font-weight:500;color:#EADCC6}
+.imm-manifesto strong{color:var(--gold);font-weight:600}
+.imm-manifesto em{font-style:italic;color:var(--terra)}
+
+/* CASAS paneles full-height */
+.imm-casa{position:relative;height:96vh;min-height:560px;display:flex;align-items:center;overflow:hidden}
+.imm-casa-bg{position:absolute;inset:-8% 0;background-size:cover;background-position:center;z-index:0;will-change:transform}
+.imm-casa-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(21,9,12,.85) 0%,rgba(21,9,12,.35) 55%,transparent 100%)}
+.imm-casa:nth-child(even) .imm-casa-veil{background:linear-gradient(270deg,rgba(21,9,12,.85) 0%,rgba(21,9,12,.35) 55%,transparent 100%)}
+.imm-casa-txt{position:relative;z-index:2;padding:0 clamp(24px,7vw,110px);max-width:620px}
+.imm-casa:nth-child(even){justify-content:flex-end;text-align:right}
+.imm-num{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:2px}
+.imm-casa-txt h2{font-family:var(--serif);font-weight:700;font-size:clamp(44px,7vw,96px);line-height:1;margin:10px 0 18px}
+.imm-casa-txt p{font-size:clamp(15px,1.6vw,19px);color:rgba(245,238,225,.85);max-width:440px}
+.imm-casa:nth-child(even) .imm-casa-txt p{margin-left:auto}
+
+/* HABITACIONES scroll horizontal */
+.imm-rooms{background:#100609}
+.imm-rooms-track{display:flex;align-items:center;gap:34px;padding:0 clamp(24px,6vw,80px);height:100vh;min-height:600px;width:max-content}
+.imm-rooms-intro{flex:0 0 auto;width:min(80vw,440px)}
+.imm-rooms-intro h2{font-family:var(--serif);font-weight:700;font-size:clamp(48px,7vw,92px);line-height:.95;margin-bottom:16px}
+.imm-rooms-intro p{color:rgba(245,238,225,.75);max-width:320px;margin-bottom:20px}
+.imm-drag{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.imm-room{flex:0 0 auto;width:min(78vw,380px);background:#1B0E12;border:1px solid rgba(217,174,95,.18);border-radius:6px;overflow:hidden}
+.imm-room.is-top{border-color:var(--gold)}
+.imm-room-img{position:relative;height:340px;background-size:cover;background-position:center}
+.imm-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--ink);font-size:11px;font-weight:700;
+  letter-spacing:.5px;padding:5px 12px;border-radius:2px}
+.imm-room-info{padding:22px 24px}
+.imm-room-info h3{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:6px}
+.imm-room-info p{font-size:13px;color:rgba(245,238,225,.6);margin-bottom:16px}
+.imm-price{font-size:14px;color:rgba(245,238,225,.8)}
+.imm-price strong{font-family:var(--serif);font-size:30px;color:var(--gold);font-weight:700}
+.imm-price span{margin-left:6px;color:rgba(245,238,225,.5)}
+
+/* EXPERIENCIAS */
+.imm-exps{padding:clamp(80px,12vh,150px) clamp(24px,5vw,70px)}
+.imm-exps-head{text-align:center;margin-bottom:44px}
+.imm-exps-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(36px,5vw,68px)}
+.imm-exps-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;max-width:1200px;margin:0 auto}
+.imm-exp{position:relative;height:300px;background-size:cover;background-position:center;border-radius:6px;overflow:hidden;
+  display:flex;align-items:flex-end;padding:22px;transition:transform .5s var(--ease-out)}
+.imm-exp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(21,9,12,.9))}
+.imm-exp span{position:relative;z-index:1;font-family:var(--serif);font-size:23px;font-weight:600}
+.imm-exp:nth-child(1){grid-column:span 7}
+.imm-exp:nth-child(2){grid-column:span 5}
+.imm-exp:nth-child(3){grid-column:span 5}
+.imm-exp:nth-child(4){grid-column:span 7}
+@media (hover:hover){.imm-exp:hover{transform:scale(.985)}}
+
+/* RESEÑA */
+.imm-quote{padding:clamp(90px,16vh,180px) clamp(24px,8vw,140px);text-align:center;max-width:1100px;margin:0 auto}
+.imm-quote p{font-family:var(--serif);font-style:italic;font-size:clamp(26px,4vw,52px);line-height:1.3;color:#EADCC6}
+.imm-quote cite{display:block;margin-top:28px;font-style:normal;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+
+/* CTA FINAL */
+.imm-final{position:relative;height:88vh;min-height:520px;background-size:cover;background-position:center;
+  display:flex;align-items:center;justify-content:center;text-align:center}
+.imm-final-veil{position:absolute;inset:0;background:rgba(21,9,12,.62)}
+.imm-final-txt{position:relative;z-index:1}
+.imm-final-txt h2{font-family:var(--serif);font-weight:700;font-size:clamp(44px,8vw,110px);line-height:.98;margin-bottom:34px}
+.imm-cta.big{font-size:15px;padding:16px 38px}
+
+/* FOOTER */
+.imm-footer{display:flex;justify-content:space-between;align-items:center;padding:34px clamp(24px,5vw,70px);
+  border-top:1px solid rgba(217,174,95,.2);font-size:13px;color:rgba(245,238,225,.6)}
+.imm-footer a:hover{color:var(--gold)}
+
+@media (max-width:760px){
+  .imm-casa:nth-child(even){text-align:left;justify-content:flex-start}
+  .imm-casa:nth-child(even) .imm-casa-veil{background:linear-gradient(90deg,rgba(21,9,12,.85),rgba(21,9,12,.35) 60%,transparent)}
+  .imm-casa:nth-child(even) .imm-casa-txt p{margin-left:0}
+  .imm-exps-grid{grid-template-columns:1fr}
+  .imm-exp{grid-column:1/-1!important;height:230px}
+}
+@media (prefers-reduced-motion:reduce){
+  .imm-hero-bg,.imm-casa-bg{transform:none!important}
+  .imm-scroll span{animation:none}
+  *{transition-duration:120ms!important}
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #2B1519; line-height: 1.6; font-size: 11pt;
+  }
+  h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; }
+  .serif { font-family: Georgia, "Times New Roman", serif; }
+  .page {
+    width: 210mm; min-height: 297mm; padding: 20mm 20mm 18mm;
+    page-break-after: always; position: relative; background: #F5EEE1;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* Cover */
+  .cover { background: #6E1B2E; color: #F5EEE1; padding: 0; display: flex; flex-direction: column; }
+  .cover-top { flex: 1; padding: 30mm 22mm 0; }
+  .cover-band { height: 10mm; background: repeating-linear-gradient(90deg,#4A1220 0 18mm,#C99A3F 18mm 36mm,#33492F 36mm 54mm); }
+  .cover-logo { font-family: Georgia, serif; font-size: 30pt; letter-spacing: 6px; color: #F5EEE1; }
+  .cover-logo small { display:block; font-size: 10pt; letter-spacing: 4px; color:#C99A3F; margin-top: 4px; }
+  .cover-title { font-size: 34pt; line-height: 1.1; margin-top: 60mm; color: #F5EEE1; }
+  .cover-sub { font-size: 13pt; color: #EEC96A; margin-top: 10px; }
+  .cover-meta { padding: 0 22mm 26mm; font-size: 10pt; color: #E6D2BE; }
+  .cover-meta b { color: #F5EEE1; }
+
+  /* Content */
+  .eyebrow { font-size: 9pt; letter-spacing: 3px; color: #C4633B; text-transform: uppercase; margin-bottom: 4px; }
+  h2.sec { font-size: 20pt; color: #6E1B2E; margin-bottom: 6px; }
+  h3 { font-size: 13pt; color: #6E1B2E; margin: 14px 0 4px; }
+  p { margin-bottom: 8px; }
+  .lead { font-size: 12pt; color: #3A2226; }
+  .rule { height: 3px; width: 60px; background: #C99A3F; margin: 8px 0 16px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 10pt; }
+  th { background: #6E1B2E; color: #F5EEE1; text-align: left; padding: 7px 10px; font-weight: 600; }
+  td { padding: 7px 10px; border-bottom: 0.5px solid #D8C6A6; vertical-align: top; }
+  tr:nth-child(even) td { background: #EFE6D3; }
+
+  .stats { display: flex; gap: 10px; margin: 12px 0 16px; }
+  .stat { flex: 1; background: #EBE0CC; border-radius: 8px; padding: 12px 14px; }
+  .stat .n { font-family: Georgia, serif; font-size: 22pt; color: #C4633B; line-height: 1; }
+  .stat .l { font-size: 8.5pt; color: #8A6A55; margin-top: 4px; }
+
+  .cards { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+  .card { flex: 1 1 45%; background: #FFFdf8; border: 0.5px solid #D8C6A6; border-radius: 8px; padding: 12px 14px; }
+  .card h4 { font-family: Georgia, serif; color: #6E1B2E; font-size: 12pt; margin-bottom: 4px; }
+  .card p { font-size: 10pt; color: #5A3D34; margin: 0; }
+  .card .tag { display:inline-block; font-size:8pt; background:#C99A3F; color:#4A1220; padding:2px 8px; border-radius:10px; margin-bottom:6px; }
+
+  .swatches { display: flex; gap: 8px; margin: 8px 0 14px; }
+  .sw { flex:1; height: 46px; border-radius: 6px; display:flex; align-items:flex-end; padding:4px 6px; font-size:7.5pt; }
+
+  ol.arch { margin: 6px 0 6px 18px; font-size: 10.5pt; }
+  ol.arch li { margin-bottom: 5px; }
+
+  .phase { display:flex; gap:12px; margin-bottom:10px; }
+  .phase .num { flex:0 0 34px; height:34px; border-radius:50%; background:#6E1B2E; color:#F5EEE1; font-family:Georgia,serif; font-size:14pt; display:flex; align-items:center; justify-content:center; }
+  .phase .body h4 { font-family:Georgia,serif; color:#6E1B2E; font-size:12pt; margin-bottom:2px; }
+  .phase .body p { font-size:10pt; color:#5A3D34; margin:0; }
+
+  .callout { background:#4A1220; color:#F3E4CF; border-radius:10px; padding:16px 18px; margin:14px 0; }
+  .callout b { color:#EEC96A; }
+
+  .foot { position:absolute; bottom:10mm; left:20mm; right:20mm; font-size:8pt; color:#8A6A55; border-top:0.5px solid #D8C6A6; padding-top:6px; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="cover-logo">CASTELO<small>DOS TUCANOS</small></div>
+    <div class="cover-title serif">Propuesta de<br>reforma web</div>
+    <div class="cover-sub">Rediseño integral + nuevas funcionalidades</div>
+  </div>
+  <div class="cover-meta">
+    Preparado para <b>la dirección de Castelo dos Tucanos</b> &nbsp;·&nbsp; Santa Teresa, Rio de Janeiro<br>
+    Julio 2026 &nbsp;·&nbsp; Documento de propuesta v1
+  </div>
+  <div class="cover-band"></div>
+</div>
+
+<!-- RESUMEN EJECUTIVO -->
+<div class="page">
+  <div class="eyebrow">Resumen ejecutivo</div>
+  <h2 class="sec serif">El lugar es de 9.4. La web, no.</h2>
+  <div class="rule"></div>
+  <p class="lead">Castelo dos Tucanos es uno de los mejores hostels de Rio: 9.4 de calificación, casi 1.500 reseñas, pileta con vista al Cristo Redentor y una comunidad increíble. Pero la web actual —un template genérico— no transmite nada de eso, no muestra precios y empuja al viajero a reservar por plataformas externas, donde el hostel paga comisión.</p>
+  <p>Esta propuesta plantea una reforma en dos frentes:</p>
+
+  <h3>1. Estética y marca</h3>
+  <p>Un rediseño completo alineado a la nueva identidad visual (la misma dirección del feed de Instagram renovado): cálida, editorial, con la paleta bordó · terracota · dorado y las fotos y videos reales de alta calidad que ya se están produciendo.</p>
+
+  <h3>2. Funcionalidad y negocio</h3>
+  <p>Convertir la web en una máquina de reservas directas: precios en vivo, buscador de fechas, prueba social, tarifas variables por temporada y venta de experiencias. El objetivo concreto: <b>bajar la dependencia de las OTAs y su comisión</b>.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">9.4</div><div class="l">Calificación<br>Hostelworld</div></div>
+    <div class="stat"><div class="n">1.458</div><div class="l">Reseñas<br>reales</div></div>
+    <div class="stat"><div class="n">~15%</div><div class="l">Comisión OTA que<br>evita cada reserva directa</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">Casas: Castelo<br>histórico + Casa boho</div></div>
+  </div>
+
+  <div class="callout">
+    <b>La idea de fondo:</b> no hay que inventar un sistema de reservas desde cero — ya existe el motor (hqbeds). El trabajo es construir una web que la gente <b>quiera</b> usar para reservar directo, mostrando lo hermoso que es el castillo y dándole razones para no irse a Booking.
+  </div>
+
+  <div class="foot"><span>Castelo dos Tucanos — Propuesta de reforma web</span><span>02</span></div>
+</div>
+
+<!-- DIAGNOSTICO -->
+<div class="page">
+  <div class="eyebrow">Diagnóstico</div>
+  <h2 class="sec serif">Qué falla en la web actual</h2>
+  <div class="rule"></div>
+  <p>La web hoy es un template de WordPress genérico. Estos son los problemas concretos y su impacto en el negocio:</p>
+
+  <table>
+    <tr><th style="width:42%">Problema</th><th>Impacto</th></tr>
+    <tr><td>Diseño genérico que no transmite el castillo ni la energía carioca</td><td>El activo número uno (lo lindo que es el lugar) queda invisible</td></tr>
+    <tr><td>No muestra precios en ningún lado</td><td>El viajero se va a Booking a averiguar → el hostel paga comisión</td></tr>
+    <tr><td>Sin reseñas ni prueba social</td><td>Se desperdicia el 9.4 con 1.458 reseñas, el mejor argumento de venta</td></tr>
+    <tr><td>Sin footer real: falta dirección, teléfono, mail y redes</td><td>Perjudica el SEO local y la confianza del visitante</td></tr>
+    <tr><td>Fotografía floja y de stock</td><td>Justo lo que el nuevo material de fotos y videos ya resuelve</td></tr>
+    <tr><td>El botón "Book Now" manda afuera sin incentivo ni fricción</td><td>Se pierde la reserva directa y, con ella, el margen</td></tr>
+  </table>
+
+  <h3>La buena noticia</h3>
+  <p>Todo esto es arreglable sin tocar la infraestructura de reservas. Ya hay un motor de reservas real funcionando (hqbeds) y un idioma múltiple (ES · EN · PT · FR). El problema no es técnico de fondo: es que <b>la web no vende ni convierte</b>. Eso es exactamente lo que resuelve la reforma.</p>
+
+  <div class="foot"><span>Castelo dos Tucanos — Propuesta de reforma web</span><span>03</span></div>
+</div>
+
+<!-- ACTIVO / ESTETICA -->
+<div class="page">
+  <div class="eyebrow">Dirección creativa</div>
+  <h2 class="sec serif">Una estética a la altura del lugar</h2>
+  <div class="rule"></div>
+  <p>Adoptamos y extendemos a la web la nueva identidad visual del Instagram renovado: cálida, editorial, aspiracional pero accesible. El tono lo marca la propia bio: <i>"Careful, you might not want to leave…"</i></p>
+
+  <h3>Paleta</h3>
+  <div class="swatches">
+    <div class="sw" style="background:#6E1B2E;color:#F5EEE1">Bordó</div>
+    <div class="sw" style="background:#C4633B;color:#F5EEE1">Terracota</div>
+    <div class="sw" style="background:#C99A3F;color:#4A1220">Dorado</div>
+    <div class="sw" style="background:#33492F;color:#F5EEE1">Verde selva</div>
+    <div class="sw" style="background:#F5EEE1;color:#6E1B2E;border:0.5px solid #D8C6A6">Crema</div>
+  </div>
+  <p style="font-size:10pt">Acentos de <b>azulejo portugués</b> (los covers de historias) y los amarillos/verdes de playa como toques de color.</p>
+
+  <div class="cards">
+    <div class="card"><h4>Tipografía</h4><p>Una serif con carácter para títulos (en la línea del logo "CASTELO") + una sans limpia para el cuerpo. Editorial, no corporativo.</p></div>
+    <div class="card"><h4>Fotografía</h4><p>Estilo "film photo": cálido, gente real, fruta, pileta, coco, sol. Se usan las fotos y videos de alta calidad ya producidos. Cero stock.</p></div>
+    <div class="card"><h4>Tono de voz</h4><p>Divertido, cálido, un poco sexy. Invita, no informa. "Cuidado: puede que no quieras irte."</p></div>
+    <div class="card"><h4>Textura</h4><p>El azulejo y la piedra del castillo como elementos gráficos que separan secciones y dan identidad.</p></div>
+  </div>
+
+  <div class="callout">
+    <b>Ya existe un mockup del home nuevo</b> con esta dirección aplicada (hero con buscador de fechas, prueba social, las dos casas, habitaciones con precio "desde", experiencias y reseñas). Sirve como referencia visual concreta de a dónde vamos.
+  </div>
+
+  <div class="foot"><span>Castelo dos Tucanos — Propuesta de reforma web</span><span>04</span></div>
+</div>
+
+<!-- ARQUITECTURA -->
+<div class="page">
+  <div class="eyebrow">Estructura</div>
+  <h2 class="sec serif">La nueva arquitectura del home</h2>
+  <div class="rule"></div>
+  <p>Cada sección tiene un objetivo claro: mostrar el lugar, generar confianza y llevar a la reserva directa.</p>
+  <ol class="arch">
+    <li><b>Hero</b> con foto/video real (pileta + vista al Cristo) y <b>buscador de fechas embebido</b> → precio y disponibilidad en vivo sin salir de la web.</li>
+    <li><b>Barra de prueba social</b> apenas debajo: 9.4 ★ · 1.458 reseñas · Ganador Hoscar 2026.</li>
+    <li><b>Las dos casas</b> (Castelo histórico / Casa boho) como bloque narrativo con su historia.</li>
+    <li><b>Habitaciones</b> con foto real, capacidad, amenities y <b>"desde U$S X / noche"</b> en vivo.</li>
+    <li><b>Experiencias y excursiones</b> — aquí entran las fotos y videos del equipo, sumando contenido para SEO y conversión.</li>
+    <li><b>El barrio (Santa Teresa)</b> como guía útil, no como relleno.</li>
+    <li><b>Galería / reel</b> conectada al Instagram.</li>
+    <li><b>Reseñas reales</b> traídas de Hostelworld, Booking y Google.</li>
+    <li><b>Footer completo</b>: contacto, WhatsApp, mapa, redes, políticas e idiomas.</li>
+  </ol>
+
+  <h3>Multi-idioma y SEO local</h3>
+  <p>Se mantienen los cuatro idiomas (ES · EN · PT · FR) y se optimiza para búsquedas como "hostel Santa Teresa", "hostel Rio pileta vista Cristo" y similares — captación gratuita y sostenida en el tiempo.</p>
+
+  <div class="foot"><span>Castelo dos Tucanos — Propuesta de reforma web</span><span>05</span></div>
+</div>
+
+<!-- FUNCIONALIDADES -->
+<div class="page">
+  <div class="eyebrow">Funcionalidades propuestas</div>
+  <h2 class="sec serif">Lo que mueve la aguja del negocio</h2>
+  <div class="rule"></div>
+  <p>Ordenadas por impacto comercial. Todas se integran con el motor de reservas existente (hqbeds).</p>
+
+  <table>
+    <tr><th style="width:34%">Funcionalidad</th><th>Beneficio para el hostel</th></tr>
+    <tr><td><b>Reserva directa con precio en vivo + incentivo</b></td><td>"Reservá directo y ahorrá la comisión + desayuno gratis". Cada reserva directa evita ~15% de comisión de OTA. Solo esto justifica la reforma.</td></tr>
+    <tr><td><b>Precios dinámicos / estacionales visibles</b></td><td>Calendario "desde" con tarifas de Carnaval, Reveillon y verano. Exponer en la web las tarifas que el motor ya maneja.</td></tr>
+    <tr><td><b>Upsells</b></td><td>Traslado del aeropuerto, tours (Cristo, favela, Selarón), clases y eventos del bar → venta extra por huésped.</td></tr>
+    <tr><td><b>Programa de eventos del bar / rooftop</b></td><td>Página propia de agenda para llenar camas los días flojos.</td></tr>
+    <tr><td><b>Captura de emails / newsletter</b></td><td>Base de datos para remarketing: nómades que vuelven y recomiendan.</td></tr>
+    <tr><td><b>Portal "nómade digital"</b></td><td>Wifi, zonas de trabajo y tarifa mensual para estadías largas — un segmento de alto valor.</td></tr>
+  </table>
+
+  <div class="callout">
+    <b>El argumento de plata para la dirección:</b> hoy cada reserva por Booking/Hostelworld deja ~15% de comisión en la mesa. Una web que convierte reservas directas se paga sola en pocos meses — y a partir de ahí, es margen.
+  </div>
+
+  <div class="foot"><span>Castelo dos Tucanos — Propuesta de reforma web</span><span>06</span></div>
+</div>
+
+<!-- FASES / CIERRE -->
+<div class="page">
+  <div class="eyebrow">Plan de trabajo</div>
+  <h2 class="sec serif">Cómo lo hacemos</h2>
+  <div class="rule"></div>
+
+  <div class="phase"><div class="num">1</div><div class="body"><h4>Diseño y validación</h4><p>Mockup del home nuevo (ya listo) + diseño de páginas internas. Se valida la dirección antes de programar.</p></div></div>
+  <div class="phase"><div class="num">2</div><div class="body"><h4>Contenido y fotografía</h4><p>Selección y edición de las mejores fotos y videos del equipo. Textos en los cuatro idiomas con tono de marca.</p></div></div>
+  <div class="phase"><div class="num">3</div><div class="body"><h4>Desarrollo</h4><p>Sitio a medida (rápido, control total del diseño), con la integración del motor de reservas y el buscador de fechas.</p></div></div>
+  <div class="phase"><div class="num">4</div><div class="body"><h4>Funcionalidades de negocio</h4><p>Precios en vivo, incentivo a la reserva directa, upsells y captura de emails.</p></div></div>
+  <div class="phase"><div class="num">5</div><div class="body"><h4>Lanzamiento y SEO</h4><p>Publicación, optimización para búsquedas locales, medición y ajustes.</p></div></div>
+
+  <h3 style="margin-top:20px">Próximos pasos</h3>
+  <p>Con esta propuesta aprobada, el paso siguiente es definir alcance y cronograma, y arrancar por el diseño de las páginas internas sobre la base del mockup del home ya existente.</p>
+
+  <div class="callout" style="background:#6E1B2E">
+    <div style="font-family:Georgia,serif;font-size:15pt;color:#F5EEE1;margin-bottom:6px">Cuidado: puede que no quieras irte.</div>
+    <div style="font-size:10pt;color:#F3E4CF">Hagamos que la web diga exactamente eso — y que la gente reserve directo para comprobarlo.</div>
+  </div>
+
+  <div class="foot"><span>Castelo dos Tucanos — Propuesta de reforma web</span><span>07</span></div>
+</div>
+
+</body>
+</html>

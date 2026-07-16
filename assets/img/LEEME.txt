@@ -1,0 +1,18 @@
+FOTOS REALES — dónde van
+=========================
+
+El sitio muestra placeholders de color con la marca hasta que se carguen
+las fotos y videos reales del equipo. En cuanto exista un archivo con el
+nombre correcto en esta carpeta, el sitio lo usa automáticamente (ver
+img_o_placeholder() en includes/config.php).
+
+Nombres esperados (formato .jpg, horizontal, mínimo 1600px de ancho):
+
+  hero.jpg            → pileta + terraza con vista al Cristo (la mejor foto)
+  casa-castelo.jpg    → fachada histórica del Castelo
+  casa-boho.jpg       → patio colorido de La Casa
+  dorm-6.jpg          → dorm 6 camas mixto
+  privada-doble.jpg   → privada doble en-suite
+  dorm-4.jpg          → dorm 4 camas femenino
+
+Consejo: comprimir a ~200-400 KB (tinypng.com o similar) para que cargue rápido.
