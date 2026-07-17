@@ -37,6 +37,7 @@ section[id]{scroll-margin-top:96px}
 .azu-hero-txt h1{font-family:var(--disp);font-weight:800;font-size:clamp(44px,6vw,82px);line-height:.98;letter-spacing:-.02em;margin-bottom:18px}
 .azu-hero-txt h1 .hl{color:var(--terra);position:relative;white-space:nowrap}
 .azu-hero-txt h1 .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:6%;height:26%;background:var(--gold);opacity:.35;z-index:-1;border-radius:3px}
+.azu-subtitle{font-family:var(--disp);font-weight:600;font-size:clamp(16px,1.9vw,22px);color:var(--azul);margin-bottom:14px}
 .azu-hero-txt p{font-size:17px;color:#4A3630;max-width:440px;margin-bottom:22px}
 .azu-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
 .chip{font-family:var(--disp);font-size:13px;font-weight:600;padding:8px 15px;border-radius:22px;border:2px solid}

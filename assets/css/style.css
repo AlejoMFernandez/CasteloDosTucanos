@@ -82,7 +82,9 @@ section[id]{scroll-margin-top:90px}
   box-shadow:0 6px 20px -10px rgba(0,0,0,.5)}
 .hero h1{font-family:var(--serif);font-size:56px;line-height:1.05;color:#fff;font-weight:700;
   text-shadow:0 2px 30px rgba(0,0,0,.4)}
-.hero-sub{margin:20px auto 0;max-width:500px;color:#F5E7D6;font-size:17px;line-height:1.6;
+.hero-title-sub{margin:14px auto 0;font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,26px);
+  color:var(--gold);text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.hero-sub{margin:16px auto 0;max-width:500px;color:#F5E7D6;font-size:17px;line-height:1.6;
   text-shadow:0 1px 12px rgba(0,0,0,.45)}
 
 /* SEARCHBAR */
